@@ -12,3 +12,4 @@ function simulaLogin() {
     }
 
     return false; 
+}

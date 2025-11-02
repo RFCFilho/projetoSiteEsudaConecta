@@ -2,7 +2,6 @@ function simulaLogin() {
     const email = document.getElementById("email").value.trim();
     const senha = document.getElementById("senha").value.trim();
 
-    // Dados mocados
     const emailValido = "eventos@esuda.br";
     const senhaValida = "Eventos123";
 
@@ -12,5 +11,4 @@ function simulaLogin() {
         alert("Login inválido. Verifique o e-mail e a senha.");
     }
 
-    return false; // impede envio real do formulário
-}
+    return false; 

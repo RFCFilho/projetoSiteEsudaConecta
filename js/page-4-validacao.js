@@ -8,11 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         function resendEmail() {
-            // Simulação de reenvio de e-mail
             alert('Um novo e-mail de confirmação foi enviado. Por favor, cheque sua caixa de entrada.');
         }
 
-        // Função para mostrar um alerta personalizado (substituindo o alert nativo)
         function alert(message) {
             const modal = document.createElement('div');
             modal.className = 'fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50';

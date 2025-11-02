@@ -1,16 +1,12 @@
-// js/page-5-certificado.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const codeInput = document.getElementById('validation-code');
     const validateBtn = document.getElementById('validate-btn');
     const certificateBtn = document.getElementById('certificate-btn');
     const certificateStatus = document.getElementById('certificate-status');
 
-    // MOCK DATA: Simula um código válido
     const VALID_CODE = "ESUDA-ABC-2025";
     let participationValidated = false;
 
-    // Função para habilitar/desabilitar o botão de validação
     window.checkCode = function() {
         if (codeInput.value.trim().length > 5) {
             validateBtn.disabled = false;
@@ -19,16 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Função para simular a validação do código
     window.validateCode = function() {
         const enteredCode = codeInput.value.trim().toUpperCase();
-        validateBtn.disabled = true; // Desabilita enquanto processa
+        validateBtn.disabled = true; 
 
         if (enteredCode === VALID_CODE) {
-            // SIMULAÇÃO DE SUCESSO
             participationValidated = true;
-
-            // Habilita o botão de certificado
             certificateBtn.disabled = false;
             certificateBtn.classList.remove('btn-emit-certificate-disabled');
             certificateBtn.classList.add('btn-emit-certificate-active');
@@ -38,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             alert("Sucesso! Sua presença foi confirmada. Clique em 'EMITIR MEU CERTIFICADO'.");
         } else {
-            // SIMULAÇÃO DE ERRO
             participationValidated = false;
             certificateBtn.disabled = true;
 
@@ -48,15 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Função para simular a emissão/impressão do certificado
     window.emitCertificate = function() {
         if (!participationValidated) {
             alert("Atenção: Você precisa validar sua presença antes de emitir o certificado.");
             return;
         }
         
-        // --- PREPARAÇÃO DO CERTIFICADO (MOCADO) ---
-        const nomeParticipante = "JOÃO DA SILVA FERREIRA"; // Dados viriam do backend
+        const nomeParticipante = "ROBERTO FERNANDE DA C. FILHO"; 
         const nomeEvento = "Workshop: Inovação e Tendências em I.A.";
         const cargaHoraria = "10 horas";
         const dataEmissao = new Date().toLocaleDateString('pt-BR');
@@ -93,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // Abre uma nova janela para impressão
         const printWindow = window.open('', '_blank');
         printWindow.document.write('<html><head><title>Certificado ESUDA Conecta</title>');
         // Adiciona um estilo básico para impressão
@@ -103,13 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
         printWindow.document.write('</body></html>');
         printWindow.document.close();
         
-        // Dá um pequeno atraso para o conteúdo carregar antes de imprimir
         setTimeout(() => {
             printWindow.print();
         }, 500);
     };
-
-    // Habilita o botão FINALIZAR INSCRIÇÃO quando o checkbox é marcado
+    
     const aceiteTermos = document.getElementById('aceite_termos');
     const submitButton = document.getElementById('submitButton');
     if (aceiteTermos && submitButton) {

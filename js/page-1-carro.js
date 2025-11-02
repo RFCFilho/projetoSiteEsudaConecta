@@ -4,12 +4,10 @@ const carousel = document.getElementById('carousel-container');
 
         if (carousel && prevBtn && nextBtn) {
             nextBtn.addEventListener('click', () => {
-                // Rola 300px para a direita
                 carousel.scrollBy({ left: 300, behavior: 'smooth' });
             });
 
             prevBtn.addEventListener('click', () => {
-                // Rola 300px para a esquerda
                 carousel.scrollBy({ left: -300, behavior: 'smooth' });
             });
         }

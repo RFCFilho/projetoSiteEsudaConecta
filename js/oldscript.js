@@ -4,7 +4,7 @@
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
 
-        const scrollAmount = 350; // Quantidade de pixels a rolar
+        const scrollAmount = 350; 
 
         nextBtn.addEventListener('click', () => {
             carousel.scrollLeft += scrollAmount;

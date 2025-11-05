@@ -68,7 +68,7 @@
 
             console.log("Dados coletados, simulando envio ao servidor...");
             setTimeout(() => {
-                window.location.href = 'page-4-validacao.html';
+                window.location.href = 'html/page-4-validacao.html';
             }, 1500);
         }
 
